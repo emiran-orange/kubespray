@@ -300,8 +300,8 @@
     dest: "{{ kube_config_dir }}/{{ item.file }}"
   with_items:
     - {name: calico-config, file: calico-config.yml, type: cm}
-    - {name: calico-node, file: calico-node.yml, type: ds}
     - {name: calico, file: calico-node-sa.yml, type: sa}
+    - {name: calico-node, file: calico-node.yml, type: ds}
     - {name: calico, file: calico-cr.yml, type: clusterrole}
     - {name: calico, file: calico-crb.yml, type: clusterrolebinding}
   register: calico_node_manifests
